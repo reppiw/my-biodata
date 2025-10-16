@@ -1,0 +1,233 @@
+:root {
+    --bg-dark: #121212;
+    --text-light: #f5f5f5;
+    --text-secondary: #aaaaaa;
+    --pink-accent: #ff69b4;
+    --pink-light: #ffc0cb;
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    transition: background-color 0.5s ease;
+    position: relative;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(236, 250, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatUp 3s linear forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-80px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+header {
+    background: var(--bg-dark);
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid var(--pink-accent);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--pink-accent);
+    background-color: rgba(255, 105, 180, 0.1);
+}
+
+header nav ul li a {
+    transition: transform 0.1s ease-out; 
+    display: inline-block;
+}
+
+.nav-clicked {
+    transform: scale(0.95);
+    opacity: 0.7;
+}
+
+.section {
+    padding: 80px 20px;
+    margin: 40px auto;
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    text-align: center;
+    border: 1px solid var(--pink-light);
+}
+
+h1, h2 {
+    color: var(--pink-accent);
+    text-shadow: 1px 1px 5px rgba(255, 105, 180, 0.4);
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+#Hello h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+#Hello p {
+    font-size: 1.3em;
+}
+
+#About .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+#About .intro-text {
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+#About .intro-photo img {
+    max-width: 250px;
+    height: auto; 
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    border: 5px solid var(--pink-accent);
+    box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#About .intro-photo img:hover {
+    transform: scale(1.05);
+}
+
+@media (min-width: 76px) {
+    #About .container {
+        flex-direction: row;
+        text-align: left;
+    }
+    #About .intro-text {
+        margin-right: 50px;
+        margin-bottom: 0;
+    }
+}
+
+#Schedule table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 30px;
+    text-align: left;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#Schedule th, #Schedule td {
+    padding: 15px;
+    background-color: #2a2a2a;
+    border: none;
+}
+
+#Schedule thead th {
+    background-color: var(--pink-accent);
+    color: var(--bg-dark);
+    font-weight: bold;
+}
+
+#Schedule tr:nth-child(even) td {
+    background-color: #252525;
+}
+
+#Schedule tbody tr {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#Schedule tbody tr:hover {
+    background-color: #383838;
+    transform: scale(1.02);
+}
+
+#Schedule thead tr th:first-child {
+    border-top-left-radius: 15px;
+}
+
+#Schedule thead tr th:last-child {
+    border-top-right-radius: 15px;
+}
+
+#Schedule tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+#Schedule tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+footer {
+    padding: 20px;
+    border-top: 2px solid var(--pink-accent);
+}
+
+/* Definisikan keyframes untuk gerakan bergoyang (shake) */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-5px) rotate(1deg); }
+    40% { transform: translateX(5px) rotate(-1deg); }
+    60% { transform: translateX(-3px) rotate(0.5deg); }
+    80% { transform: translateX(3px) rotate(-0.5deg); }
+}
+
+/* Terapkan animasi pada paragraf "Hobby idk" */
+/* Anda perlu menambahkan kelas (misalnya class="hobby-idk") pada p Hobby idk di HTML */
+
+/* Asumsi Anda sudah memberi ID/Class, jika tidak, bisa menggunakan selector nth-child(4) */
+#Hello .hobby { 
+    display: inline-block; /* Penting agar transform bekerja */
+    animation: shake 2s ease-in-out infinite alternate; 
+}
